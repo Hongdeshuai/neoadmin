@@ -54,20 +54,20 @@ const homeRoutes = [
       icon: Person,
       component: Material
     },
-    {
-      path: "/home/exam",
-      sidebarName: "Exam",
-      navbarName: "Exam",
-      icon: Person,
-      component: Exam
-    },
-    {
-      path: "/home/ranking",
-      sidebarName: "Ranking",
-      navbarName: "Ranking",
-      icon: Person,
-      component: Ranking
-    },
+    // {
+    //   path: "/home/exam",
+    //   sidebarName: "Exam",
+    //   navbarName: "Exam",
+    //   icon: Person,
+    //   component: Exam
+    // },
+    // {
+    //   path: "/home/ranking",
+    //   sidebarName: "Ranking",
+    //   navbarName: "Ranking",
+    //   icon: Person,
+    //   component: Ranking
+    // },
     {
       path: "/home/survey",
       sidebarName: "Survey",
@@ -75,13 +75,13 @@ const homeRoutes = [
       icon: Person,
       component: Survey
     },
-    {
-      path: "/home/order",
-      sidebarName: "Order",
-      navbarName: "Order",
-      icon: Person,
-      component: Order
-    },
+    // {
+    //   path: "/home/order",
+    //   sidebarName: "Order",
+    //   navbarName: "Order",
+    //   icon: Person,
+    //   component: Order
+    // },
     {
       path: "/home/logout",
       sidebarName: "Log Out",
