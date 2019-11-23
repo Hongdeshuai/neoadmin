@@ -1,0 +1,17 @@
+.CustomTable * td  {
+    font-size: 15px!important;
+    padding:0!important
+}
+.CustomTable * th {
+    font-size: 15px!important;
+    padding:0!important
+}
+.CustomTable * span {
+    font-size: 15px!important
+}
+.CustomTable * h6 {
+    font-size: 15px!important
+}
+.TabView * span{
+    font-size: 15px!important
+}
