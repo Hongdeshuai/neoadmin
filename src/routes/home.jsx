@@ -54,13 +54,13 @@ const homeRoutes = [
       icon: Person,
       component: Material
     },
-    // {
-    //   path: "/home/exam",
-    //   sidebarName: "Exam",
-    //   navbarName: "Exam",
-    //   icon: Person,
-    //   component: Exam
-    // },
+    {
+      path: "/home/exam",
+      sidebarName: "Exam",
+      navbarName: "Exam",
+      icon: Person,
+      component: Exam
+    },
     // {
     //   path: "/home/ranking",
     //   sidebarName: "Ranking",
