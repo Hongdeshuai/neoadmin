@@ -25,7 +25,8 @@ class Users extends Component {
         pageNumber: 1,
         users: [],
         isLoading: false,
-        raw_data:[]
+        raw_data:[],
+        note:''
     }
 
     componentDidMount() {
@@ -48,10 +49,18 @@ class Users extends Component {
     }
 
     showMail(email,row){
-        this.setState({email:email})
-        this.setState({open:true})
+        console.log("=============let me see==============",this.state.raw_data[row])
+        
+        this.setState({email:email, note: this.state.raw_data[row]['note']},()=>{
+            this.setState({open:true})
+        })
+        
     }
 
+    updateNote = ()=>{
+        this.getUsers()
+        this.setState({open:false, assign_open:false})
+    }
     closeMail = ()=>{
         this.setState({open:false, assign_open:false})
     }
@@ -94,6 +103,7 @@ class Users extends Component {
             })
             this.setState({
                 data:data,
+                raw_data:tmp,
                 isLoading:true,
                 open:false
             })
@@ -127,7 +137,7 @@ class Users extends Component {
                                 this.showMail(tableMeta['rowData'][1],tableMeta['rowIndex']);
                                 
                             }}>
-                                email
+                                note
                             </i>
                             {
                                 (value=="0")?
@@ -191,7 +201,7 @@ class Users extends Component {
                                 />
                                 {
                                     this.state.open?
-                                        <SendMail open={true} onClose={this.closeMail} email={this.state.email}/>
+                                        <SendMail open={true} onClose={this.closeMail} onUpdate={this.updateNote} email={this.state.email} note={this.state.note}/>
                                     :null    
                                 }
                                 {

@@ -34,7 +34,8 @@ class SendMail extends Component {
 
     componentDidMount(){
         this.setState({
-            to:this.props.email
+            to:this.props.email,
+            message:this.props.note
         })
         // alert(this.props.email)
     }
@@ -50,8 +51,10 @@ class SendMail extends Component {
     onClose = () => {
         this.props.onClose();
     }
-
-    onCreateNew = () => {
+    onUpdate = ()=>{
+        this.props.onUpdate();
+    }
+    onCreateNew = async () => {
         const { to,email, password, confirm_password, requesting,name,message} = this.state;
         if (requesting) {
             return;
@@ -66,8 +69,8 @@ class SendMail extends Component {
             this.props.onAlertMessage("error", "Message can't be empty");
             return;
         }
-        Apis.sendMail(to,message)
-        this.onClose()
+        let resp = await Apis.updateNote(to, message)
+        this.onUpdate()
     }
 
     render() {
@@ -86,7 +89,7 @@ class SendMail extends Component {
                     aria-describedby="signup-dialog-description">
                     <DialogTitle id="signup-dialog-title"
                         className={classes.title}>
-                        {"Send Mail to you Customer"}
+                        {"Note for user"}
                     </DialogTitle>
 
                     <DialogContent>
@@ -99,28 +102,10 @@ class SendMail extends Component {
                             
                             <Grid container 
                                 direction="column">
+                                
                                 <FormControl 
                                     className={classes.formControl}>
-                                    <InputLabel shrink htmlFor="ibName" className={classes.inputlabel}>
-                                        To
-                                    </InputLabel>
-                                    <OutlinedInput
-                                        id="ibName"
-                                        placeholder="Your Name Please"
-                                        classes={{
-                                            root: classes.inputbaseRoot,
-                                            input: classes.inputbaseInput,
-                                        }}
-                                        value={this.state.to}
-                                        onChange={this.handleChange('to')}
-                                        fullWidth
-                                    />
-                                </FormControl>
-                                <FormControl 
-                                    className={classes.formControl}>
-                                    <InputLabel shrink htmlFor="ibEmail" className={classes.inputlabel}>
-                                        Message
-                                    </InputLabel>
+                                   
                                     <TextField
                                         multiline={true}
                                         id="message"
@@ -131,6 +116,7 @@ class SendMail extends Component {
                                             input: classes.inputbaseInput,
                                             input: classes.TextField
                                         }}
+                                        rows={5}
                                         value={this.state.message}
                                         onChange={this.handleChange('message')}
                                         fullWidth
@@ -144,7 +130,7 @@ class SendMail extends Component {
                             <Grid item container direction="column" justify="center" alignItems="stretch">
                                 <Button color="primary" variant="contained" className={classes.btnNewAccount} 
                                     onClick={this.onCreateNew}>
-                                    Send Mail
+                                    Update
                                 </Button>
                             </Grid>
                             {requesting && <CircularProgress size={24} className={classes.buttonProgress} />}

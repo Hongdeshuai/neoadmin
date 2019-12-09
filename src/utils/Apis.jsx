@@ -9,6 +9,9 @@ const adminHeader = {
 // const baseURL = "http://localhost:4000/api/v1/admin";
 export default {
     // Saves a book to the database
+    updateNote:function(to, message){
+        return axios.post(baseURL+"/users/update_note", {email:to, note:message}, adminHeader)
+    },
     login: function (user) {
         return axios.post(baseURL + "/login", user, { headers: { "authorization": "admin" } });
     },
