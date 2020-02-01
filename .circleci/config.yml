@@ -12,7 +12,4 @@ jobs:
         name: install node package
         command: |
           yarn install
-      - run:
-        name: build project
-        command: |
           yarn build
