@@ -9,4 +9,3 @@ jobs:
       - image: circleci/node:7.10
     steps:
       - run: yarn install
-      - run: yarn start
