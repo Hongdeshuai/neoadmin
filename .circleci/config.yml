@@ -12,4 +12,4 @@ jobs:
       - checkout
       - run: yarn install
       - run: cat package.json
-      - run: npm run-script build
+      - run: npm run-script test
