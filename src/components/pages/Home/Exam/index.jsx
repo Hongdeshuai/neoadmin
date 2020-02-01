@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 // core components
 
 import { withSnackbar } from 'notistack';
-
+import './styles.css'
 import Psico from './psico'
 import Ingles from './ingles'
 import Codigo from './codigo'

@@ -170,7 +170,18 @@ class Dashboard extends Component {
         return (
             <GridContainer>
                  <GridItem xs={12} sm={12} md={12}>
-                    
+                    <Card>
+                        <CardHeader color="secondary">
+                                <h4 className={classes.cardTitleWhite}>Management Dashboard </h4>
+                        </CardHeader>
+                        <CardBody>
+                            <Grid>
+                            <Button color="secondary" className={classes.viewButton} disableRipple disableFocusRipple >
+                                Backup Current State
+                            </Button>
+                            </Grid>
+                        </CardBody>
+                    </Card>
                 </GridItem>
             </GridContainer>
         );

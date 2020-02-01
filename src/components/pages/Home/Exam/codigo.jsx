@@ -195,7 +195,7 @@ class Codigo extends Component {
                                                                         <ListItemIcon>
                                                                             <Subject />
                                                                         </ListItemIcon>
-                                                                        <ListItemText primary={row['Question']} />
+                                                                        <ListItemText className='bold_question' primary={row['Question']} />
                                                                     </ListItem>
 
                                                                     <Collapse in={this.state.selected == row['_id']} timeout="auto" unmountOnExit>
