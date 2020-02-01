@@ -7,7 +7,7 @@ jobs:
   build:
     working_directory: ~/neoadmin
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:10
     steps:
       - checkout
-      - run: yarn install && yarn build
+      - run: yarn install
