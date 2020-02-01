@@ -10,7 +10,9 @@ jobs:
     steps:
       - run:
         name: install node package
-        command: yarn install
+        command: |
+          yarn install
       - run:
         name: build project
-        command: yarn build
+        command: |
+          yarn build
